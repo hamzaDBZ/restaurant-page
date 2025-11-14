@@ -1,0 +1,368 @@
+/* Start Variables */
+:root {
+    --main-color: #a42d24;
+    --main-color-alt: #ffed9a;
+
+}
+/* End Variables */
+/* Start Global Rules */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* End Global Rules */
+/* Start Components */
+.main-title {
+    margin: 0 auto 60px;
+    width: fit-content;
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: -4px;
+}
+/* End Components */
+/* Start Header */
+header {
+    background-color: var(--main-color);
+    height: 94px;
+}
+
+@media (max-width: 767px) {
+    header {
+        height: 158px;
+    }
+}
+
+header .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+    header .container {
+        flex-direction: column;
+    }
+}
+
+header h2 {
+    color: var(--main-color-alt);
+    font-size: 30px;
+    letter-spacing: -1px;
+    margin: 0;
+    padding: 30px 0;
+    cursor: pointer;
+}
+
+header nav{
+    display: flex;
+}
+
+header nav button {
+    background-color: inherit;
+    color: var(--main-color-alt);
+    font-size: 20px;
+    height: 94px;
+    padding: 0 30px;
+    transition: 0.3s;
+    align-content: center;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    header nav button {
+        height: 64px;
+    }
+}
+
+header nav button:hover {
+    background-color: #802b25;
+}
+/* End Header */
+/* Start Landing */
+.landing {
+    height: calc(100vh - 94px);
+    background-image: url(images/background.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.landing::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 70%);
+}
+
+.landing .text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--main-color-alt);
+    text-align: center;
+    line-height: 1.5;
+}
+
+.landing .text h1 {
+    margin: 0;
+}
+
+@media (min-width: 1200px) {
+    .landing .text h1 {
+        font-size: 50px;
+    }
+}
+
+.landing .text p {
+    margin: 20px 0 0;
+}
+
+@media (min-width: 1200px) {
+    .landing .text p {
+        font-size: 25px;
+    }
+}
+/* End Landing */
+/* Start Footer */
+footer p {
+    margin: 0;
+    padding: 20px;
+    background-color: var(--main-color);
+    color: #ff9b00;
+    text-align: center;
+    font-weight: bold;
+}
+
+footer p span {
+    color: var(--main-color-alt);
+}
+/* End Footer */
+/* Start Menu */
+.menu {
+    min-height: calc(100vh - 94px);
+    background-color: var(--main-color-alt);
+    color: var(--main-color);
+    padding: 50px 0;
+}
+
+.menu .content {
+    width: 80%;
+    margin: 0 auto 50px;
+    line-height: 1.5;
+}
+.menu .content h3 {
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin: 0;
+}
+
+.menu .content p {
+    margin: 15px 0 0;
+    font-size: 20px;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px dotted var(--main-color);
+    padding-bottom: 5px;
+}
+
+.menu .content p span {
+    font-weight: bold;
+    font-size: 22px;
+    margin-left: 20px;
+}
+
+@media (max-width:767px) {
+    .menu .content h3 {
+        text-align: center;
+    }
+
+    .menu .content p {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu .content p span {
+        margin: 20px 0 0;
+    }
+}
+/* End Menu */
+/* Start About */
+.about {
+    padding: 100px 0 50px;
+    background-color: var(--main-color-alt);
+    color: var(--main-color);
+}
+
+.about p {
+    font-size: 25px;
+    font-style: italic;
+    line-height: 1.5;
+    width: 70%;
+    margin: 0 auto 30px;
+}
+
+@media (max-width:767px) {
+    .about p {
+        text-align: center;
+    }
+}
+
+.about p:last-child {
+    font-weight: bold;
+}
+/* End About */
+/* Start Contact */
+.contact {
+    padding: 50px 0;
+    background-color: var(--main-color-alt);
+    color: var(--main-color);
+}
+
+.contact .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+    .contact .container {
+        gap: 50px;
+    }
+}
+
+.contact form {
+    flex-basis: 50%;
+}
+
+@media (max-width: 767px) {
+    .contact form {
+        flex-basis: 100%;
+    }
+}
+
+.contact h3 {
+    margin: 0 0 30px;
+    font-size: 25px;
+}
+
+.contact form input[type="email"],
+.contact form textarea {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 30px;
+    caret-color: var(--main-color);
+    background-color: var(--main-color-alt);
+    color: var(--main-color);
+    border: none;
+    border-bottom: 2px solid;
+    transition: 0.3s;
+}
+
+.contact form input[type="email"]:focus,
+.contact form textarea:focus {
+    outline: none;
+    background-color: rgb(164 45 36 / 10%)
+}
+
+.contact form input[type="email"]::placeholder,
+.contact form textarea::placeholder {
+    color: var(--main-color);
+    transition: 0.3s;
+}
+
+.contact form input[type="email"]:focus::placeholder,
+.contact form textarea:focus::placeholder {
+    opacity: 0;
+}
+
+.contact form textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    resize: none;
+    height: 200px;
+    line-height: 1.5;
+}
+
+.contact form input[type="submit"] {
+    display: block;
+    margin-left: auto;
+    padding: 15px 25px;
+    border: 2px solid var(--main-color);
+    border-radius: 6px;
+    background-color: var(--main-color);
+    color: var(--main-color-alt);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact form input[type="submit"]:hover {
+    background-color: var(--main-color-alt);
+    color: var(--main-color);
+}
+
+.contact .address {
+    flex-basis: 50%;
+    padding-left: 50px;
+}
+
+@media (max-width: 767px) {
+    .contact .address {
+        flex-basis: 100%;
+        padding: 0;
+        text-align: center;
+    }
+}
+
+.contact .address address {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+/* End Contact */
